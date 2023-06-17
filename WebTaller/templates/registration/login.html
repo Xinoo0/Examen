@@ -1,0 +1,26 @@
+{% extends '../web/index.html' %}
+{% block title %} Login {% endblock %}
+
+<!-- CONTENEDOR DE PAGINA -->
+{% block body %}
+<div class="container form">
+    <form method="post">
+        {% csrf_token %}
+        <fieldset>
+            <legend class="text-center header">Login</legend>
+            <label for="Ingrese Credenciales"></label>
+            <div class="mb-2">
+                <input class="form-control" name="username" type="text" placeholder="Nombre Usuario">
+            </div>
+
+            <div class="mb-2">
+                <input class="form-control" name="password" type="password" placeholder="Ingrese Constraseña" required>
+            </div>
+
+            <div class="mb-3 d-grid">
+                <button class="btn btn-primary btn-lg" type="submit">Iniciar</button>
+            </div>
+        </fieldset>
+    </form>
+{% endblock %}
+</div>

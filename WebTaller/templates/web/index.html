@@ -18,7 +18,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+          <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Inicio</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Nosotros</a>
@@ -34,14 +34,19 @@
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
         </li>
+        <!-- <li class="nav-item"> -->
+          <!-- <a class="nav-link disabled"></a> -->
+        </li>
+
         <li class="nav-item">
-          <a class="nav-link disabled">Agregar</a>
+          <a class="nav-link" tabindex="-1" aria-disabled="true" href="{% url 'login' %}">Iniciar Sesion</a>
+
         </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Buscar</button>
-      </form>
+      <!-- <form class="d-flex" role="search"> -->
+        <!-- <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search"> -->
+        <!-- <button class="btn btn-outline-success" type="submit">Buscar</button> -->
+      <!-- </form> -->
     </div>
   </div>
 </nav>
@@ -50,6 +55,10 @@
 
 <div class="">
   {% block body %}
+    <div>
+      <h1>AUTOS</h1>
+      <h1>{{user.username}}</h1>
+    </div>
   {% endblock %}
 </div>
 
