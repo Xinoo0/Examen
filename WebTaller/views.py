@@ -12,6 +12,10 @@ def index(request):
     context={}
     return render(request, 'Web/index.html', context)
 
+def nosotros(request):
+    context={}
+    return render(request, 'Web/nosotros.html', context)
+
 
 # GESTION USUARIOS
 

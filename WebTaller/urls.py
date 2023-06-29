@@ -7,10 +7,11 @@ from django.contrib import admin
 
 urlpatterns = [
 
-    path('index', views.index, name='index'),
+    path('', views.index, name='index'),
+    path('nosotros/', views.nosotros, name="nosotros"),
 
     # GESTION USUARIOS
-    path('login', views.login, name='login'),
+    path('accounts/login/', views.login, name='login'),
     path('salir', views.salir, name='salir'),
 
 ]

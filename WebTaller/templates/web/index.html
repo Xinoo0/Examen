@@ -7,6 +7,7 @@
     <title>{% block title %}Monos Gracientos{% endblock %}</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -21,7 +22,7 @@
           <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Nosotros</a>
+          <a class="nav-link" href="{% url 'nosotros' %}">Nosotros</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -53,11 +54,50 @@
 
 <!-- CONTENEDOR DE PAGINA -->
 
-<div class="">
+<div class=".center">
   {% block body %}
-    <div>
-      <h1>AUTOS</h1>
-      <h1>{{user.username}}</h1>
+    <div class="body">
+      <!-- INDICADOR -->
+      <ol class="carousel-indicators">
+        <li data-targer="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-targer="#myCarousel" data-slide-to="1"></li>
+        <li data-targer="#myCarousel" data-slide-to="2"></li>
+      </ol>
+
+      <!-- CARRUSEL -->
+      <div id="carouselExampleIndicators" class="carousel slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <video onloadeddata="this.muted=true" autoplay="load">
+              <source src="{% static '/videos/Revisionauto.mp4' %}" class="d-block w-100" alt="...">
+            </video>
+          </div>
+          <div class="carousel-item">
+            <video onloadeddata="this.muted=true" autoplay="load">
+            <source src="{% static '/videos/lavadodeautoss.mp4' %}" class="d-block w-100" alt="...">
+            </video>
+          </div>
+          <div class="carousel-item">
+            <video onloadeddata="this.muted=true" autoplay="load">
+              <source src="{% static '/videos/cambiodeneumaticos.mp4' %}" class="d-block w-100" alt="...">
+            </video>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#myCarousel1" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </a>
+        <a class="carousel-control-next" href="#MyCarousel2" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Siguiente</span>
+        </a>
+      </div>
+
     </div>
   {% endblock %}
 </div>
