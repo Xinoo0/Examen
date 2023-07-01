@@ -12,6 +12,7 @@ urlpatterns = [
     path('Europeas/', views.europeas, name="europeas"),
     path('marcas/', views.marcas, name="marcas"),
     path('tienda/', views.tienda, name="tienda"),
+    path('edicionproducto/', views.edicionproducto, name="edicionproducto"),
 
     # GESTION USUARIOS
     path('accounts/login/', views.login, name='login'),

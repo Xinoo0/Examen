@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Auto
+from .models import Producto
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
@@ -39,4 +39,33 @@ def login(request):
 
 def salir(request):
     logout(request)
+    return redirect('/')
+
+
+# GESTION PRODUCTOS
+
+def Add_Producto(request):
+    codigo = request.post['txtCodigo']
+    nombre = request.post['txtNombre']
+    stock = request.post['numStock']
+    producto = Producto.objects.create(
+        codigo=codigo, nombre=nombre, stock=stock)
+    messages.success(request, 'Producto Registrado')
+    return redirect('/')
+
+def Edit_Producto(request):
+    codigo = request.post['txtCodigo']
+    nombre = request.post['txtNombre']
+    stock = request.post['numStock']
+    producto = Producto.objects.get(codigo=codigo)
+    producto.nombre = nombre
+    producto.stock = stock
+    articulo.save()
+    messages.success(request, 'Producto Actualizado')
+    return redirect('/')
+
+def Del_Producto(request):
+    producto = Producto.objects.get(codigo=codigo)
+    producto.delete()
+    messages.success(request, 'Producto Eliminado')
     return redirect('/')
