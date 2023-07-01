@@ -6,9 +6,12 @@ from django.contrib import admin
 
 
 urlpatterns = [
-
-    path('', views.index, name='index'),
+    ##path('', views.base, name='base'),
+    path('index/', views.index, name="index"),
     path('nosotros/', views.nosotros, name="nosotros"),
+    path('Europeas/', views.europeas, name="europeas"),
+    path('marcas/', views.marcas, name="marcas"),
+    path('tienda/', views.tienda, name="tienda"),
 
     # GESTION USUARIOS
     path('accounts/login/', views.login, name='login'),

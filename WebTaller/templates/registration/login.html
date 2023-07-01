@@ -1,26 +1,64 @@
 {% extends '../web/index.html' %}
+
 {% block title %} Login {% endblock %}
 
 <!-- CONTENEDOR DE PAGINA -->
 {% block body %}
-<div class="container form">
-    <form method="post">
-        {% csrf_token %}
-        <fieldset>
-            <legend class="text-center header">Login</legend>
-            <label for="Ingrese Credenciales"></label>
-            <div class="mb-2">
-                <input class="form-control" name="username" type="text" placeholder="Nombre Usuario">
+<head>
+    <meta charset="utf-8">
+    <title >Formulario Inicio Sesión CSS</title>
+    <link rel="stylesheet" href="css/cssform.css">
+    <link rel="shortcut icon" href="/iniciosesion/fotos/logo.jpg">
+    <style>
+      p{
+        color: white;
+      }
+    </style>
+  </head>
+  
+  <body >
+    <header>
+      <div class=" overlay"></div>
+        <video onloadedmetadata="this.muted=true" autoplay loop>
+          <source src="videos/video-iniciosesion.mp4">
+        </video>
+        <div class="center">
+          <h1 img="/foto">Inicio de sesion</h1>
+          <form method="" id="fmrlogin">
+            <div class="txt_field">
+              <label>Nombre Usuario</label>
+              <input type="text" name="userName" id="userName">
             </div>
+  
+            <div class="txt_field">
+              <label for="userPassword">Contraseña</label>
+              <input type="password" id="userPassword">
+  
+  
+  
+            </div>
+            
+  
+            <p id="warnings" ></p>
+  <br>
+  <a>
+    <input target="_blank" type="submit" type="button" value="Iniciar Sesion" a href="paginamenu.html">
+  </a>
+  <a style="color: grey;" target="_blank" href="paginamenu.html">iniciar sesion</a>
+          <tr>
+            <div class="link_Ayuda">
+              Olvido Contraseña?<a href="Olvidocontrasena.html">Clic Aquí </a>
+            </div>
+          </tr>
+            <div class="link_Ayuda">
+              No Tiene Cuenta? <a href="registro.html">Registrar</a>
+            </div>
+  
+          </form>
+        </div>
+  
+    </header>
+    <script src="js/ejemplo1.js"></script>
+  </body>
 
-            <div class="mb-2">
-                <input class="form-control" name="password" type="password" placeholder="Ingrese Constraseña" required>
-            </div>
-
-            <div class="mb-3 d-grid">
-                <button class="btn btn-primary btn-lg" type="submit">Iniciar</button>
-            </div>
-        </fieldset>
-    </form>
 {% endblock %}
-</div>
