@@ -1,7 +1,7 @@
 {% extends '../web/index.html' %}
 
 {% block title %} Login {% endblock %}
-
+{% load static %}
 <!-- CONTENEDOR DE PAGINA -->
 {% block body %}
 <head>
@@ -20,8 +20,8 @@
     <header>
       <div class=" overlay"></div>
         <video onloadedmetadata="this.muted=true" autoplay loop>
-          <source src="videos/video-iniciosesion.mp4">
-        </video>
+          <source src="{% static '/videos/video-iniciosesion.mp4' %}">
+        </video> 
         <div class="center">
           <h1 img="/foto">Inicio de sesion</h1>
           <form method="" id="fmrlogin">
